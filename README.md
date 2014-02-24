@@ -36,6 +36,8 @@ In order to use the wallet, you will first need to discover the unspent transact
       })
     })
 
+There will be events based on incoming data from the server. This will be specced out soon!
+
 To get a list of unspents in JSON form:
 
     wallet.currentUnspents()
