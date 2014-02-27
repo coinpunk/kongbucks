@@ -1,5 +1,7 @@
 # Kongbucks
 
+[![Build Status](https://travis-ci.org/coinpunk/kongbucks.png)](https://travis-ci.org/coinpunk/kongbucks)
+
 A Bitcoin/altcoin wallet for node.js and the browser!
 
 Kongbucks is a hybrid design, which implements the best of HD wallets (one seed to generate all private keys), but still provides support for importing external private keys and watch only addresses. It uses best practices for improving privacy - for example, the change for transactions is sent to special addresses with a random ordering of the outputs instead of the original address, preventing people from determining which address is change. Eventually we will have support for emerging privacy tech like stealth addresses (pull requests extremely welcome here).
