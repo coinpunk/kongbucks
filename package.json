@@ -1,0 +1,19 @@
+{
+  "name": "Kongbucks",
+  "version": "0.0.1",
+  "description": "Powerful bitcoin/altcoin wallet for node.js and the browser",
+  "main": "index.js",
+  "author": "Kyle Drake",
+  "license": "MIT",
+  "dependencies": {
+    "bitcoinjs-lib": "git://github.com/bitcoinjs/bitcoinjs-lib.git",
+    "mnemonic": "~1.0.1"
+  },
+  "devDependencies": {
+    "istanbul": "~0.2.4",
+    "mocha": "~1.17.1"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*"
+  }
+}

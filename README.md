@@ -2,13 +2,13 @@
 
 A Bitcoin/altcoin wallet for node.js and the browser!
 
-Kongbucks is a hybrid design, which implements the best of HD wallets (single seed to generate), but still provides support for importing external private keys and watch only addresses. It uses best practices for improving privacy - for example, the change for transactions is sent to special addresses with a random ordering of the outputs instead of the original address, preventing people from determining which address is change. Eventually we will have support for emerging privacy tech like stealth addresses (pull requests extremely welcome here).
+Kongbucks is a hybrid design, which implements the best of HD wallets (one seed to generate all private keys), but still provides support for importing external private keys and watch only addresses. It uses best practices for improving privacy - for example, the change for transactions is sent to special addresses with a random ordering of the outputs instead of the original address, preventing people from determining which address is change. Eventually we will have support for emerging privacy tech like stealth addresses (pull requests extremely welcome here).
 
-When using only an HD wallet design, you can regenerate the wallet (and all of the addresses) at any time using a seed which can be presented as a mnemonic string of words, without sacrificing the strength of your seed like brain wallets do.
+When using only an HD wallet design, you can regenerate the wallet (and all of the addresses) at any time using a seed which can be presented as a mnemonic string of words, without reducing the amount of entrophy like brain wallets do.
 
-Eventually the idea is to make the wallet support multiple altcoins in a single wallet (litecoin, dogecoin), but that will require some code that doesn't exist yet. But we have designed the wallet with multiple currency support in mind.
+Eventually the idea is to make the wallet support multiple altcoins in a single wallet (litecoin, dogecoin), but that will require some code that doesn't exist yet.
 
-The goal of this project isn't to just be a special wallet for Coinpunk - we want to make a solid base that everyone can use for wallet work, so that we don't have so much fragmentation in JS wallet design like we do right now. It probably won't work, but oh well.
+The goal of this project is to unify the bitcoin development community around a single, solid wallet design - so that we don't have as much fragmentation and we can focus on the UI differences.
 
 ## Usage
 
@@ -20,13 +20,10 @@ Create a new wallet from a random seed:
 
     var Kongbucks = require('kongbucks')
     var wallet = new Kongbucks()
-    
-    console.log(wallet.getSeed())
-    console.log(wallet.getMnemonicSeed())
 
 If you're only using the seed, you can use it to regenerate the entire wallet's keys:
 
-    var wallet = new Kongbucks('seed or mnemonic seed')
+    var wallet = new Kongbucks('yellow veil whole gotta defeat amaze collapse frost character sink shown score')
 
 In order to use the wallet, you will first need to discover the unspent transactions for your wallet from a listener server. The listeners are modular, so that people can contribute support for more servers in the future. The wallet will work the same regardless of the listen server used, and can be changed on the fly. This example uses blockchain.info, automatically sending a list of the addresses you need to listen for unspent transactions on:
 
