@@ -47,7 +47,7 @@ To import a private key not related to the HD wallet (note: you will need to sto
 
 You can also import an address if you would like to be able to watch it:
 
-    wallet.addWatchOnlyAddress('watch only address', 'Whiffies Fried Pies')
+    wallet.addWatchOnlyAddress('1GRi6DoyHZHNybWrDQsemBQoEWhmyhZaxd', 'Whiffies Fried Pies')
 
 Exporting the wallet file for storage as unencrypted JSON:
 
