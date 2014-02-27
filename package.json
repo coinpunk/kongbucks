@@ -11,9 +11,12 @@
   },
   "devDependencies": {
     "istanbul": "~0.2.4",
-    "mocha": "~1.17.1"
+    "mocha": "~1.17.1",
+    "browserify": "~3.31.2",
+    "uglify-js": "~2.4.12"
   },
   "scripts": {
-    "test": "NODE_ENV=test istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*"
+    "test": "NODE_ENV=test istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*",
+    "compile": "node_modules/browserify/bin/cmd.js ./index.js -s Kongbucks | node_modules/uglify-js/bin/uglifyjs > kongbucks.min.js"
   }
 }

@@ -1,3 +1,5 @@
 .DS_Store
 coverage
 test.js
+kongbucks.min.js
+node_modules
