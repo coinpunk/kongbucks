@@ -41,11 +41,11 @@ To get a list of unspents in JSON form:
 
 To import a private key not related to the HD wallet (note: you will need to store the wallet file somewhere in order to persist if you do this!):
 
-    wallet.addPrivateKey('private key')
+    wallet.importPrivateKey('private key')
 
 You can also import an address if you would like to be able to watch it:
 
-    wallet.addWatchOnlyAddress('watch only address', 'Donations for Coinpunk')
+    wallet.addWatchOnlyAddress('watch only address', 'Whiffies Fried Pies')
 
 Exporting the wallet file for storage as unencrypted JSON:
 
