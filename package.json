@@ -7,7 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "bitcoinjs-lib": "git://github.com/bitcoinjs/bitcoinjs-lib.git",
-    "mnemonic": "~1.0.1"
+    "mnemonic": "~1.0.1",
+    "websocket-stream": "~0.5.0"
   },
   "devDependencies": {
     "istanbul": "~0.2.4",
@@ -18,5 +19,19 @@
   "scripts": {
     "test": "NODE_ENV=test istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*",
     "compile": "node_modules/browserify/bin/cmd.js ./index.js -s Kongbucks | node_modules/uglify-js/bin/uglifyjs > kongbucks.min.js"
-  }
+  },
+  "testling": {
+    "browsers": [
+      "ie/8..latest",
+      "chrome/20..latest",
+      "firefox/10..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ],
+    "harness": "mocha-bdd",
+    "files": "test/*.js"
+  },
 }

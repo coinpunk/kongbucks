@@ -1,6 +1,7 @@
 # Kongbucks
 
 [![Build Status](https://travis-ci.org/coinpunk/kongbucks.png)](https://travis-ci.org/coinpunk/kongbucks)
+[![browser support](https://ci.testling.com/coinpunk/kongbucks.png)](https://ci.testling.com/coinpunk/kongbucks)
 
 A Bitcoin/altcoin wallet for node.js and the browser!
 
@@ -27,13 +28,16 @@ If you're only using the seed, you can use it to regenerate the entire wallet's 
 
     var wallet = new Kongbucks('yellow veil whole gotta defeat amaze collapse frost character sink shown score')
 
-In order to use the wallet, you will first need to discover the unspent transactions for your wallet from a listener server. The listeners are modular, so that people can contribute support for more servers in the future. The wallet will work the same regardless of the listen server used, and can be changed on the fly. This example uses blockchain.info, automatically sending a list of the addresses you need to listen for unspent transactions on:
+In order to use the wallet, you will first need to discover the unspent transactions for your wallet from a listener server. The listeners are modular, so that people can contribute support for more servers in the future. The wallet will work the same regardless of the listen server used, and can be changed on the fly.
 
-    wallet.listen({source: 'blockchain'}, function(error, result) {
-      wallet.getUnspents(function() {
-        wallet.getBalance()
-      })
-    })
+var mySource = new Kongbucks.sources.Blockchain();
+wallet.source(mySource)
+
+
+    wallet.source('blockchain.info')
+//    wallet.source('electrum', 'https://yourserver.com')
+//    wallet.listen('blockchain.info', function(error, result) {
+//    })
 
 There will be events based on incoming data from the server. This will be specced out soon!
 
