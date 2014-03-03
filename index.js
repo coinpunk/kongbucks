@@ -20,7 +20,7 @@ var Kongbucks = function(mnemonicSeed, args) {
     this.mnemonicSeed = mnemonic.encode(this.seed)
   }
 
-  this.hd = new bitcoin.HDWallet(this.seed, (this.testnet == true ? 'Test' : 'Bitcoin'))
+  this.hd = new bitcoin.HDWallet(this.seed, (this.testnet == true ? 'testnet' : 'mainnet'))
   this.keys = []
 }
 
@@ -38,10 +38,10 @@ Kongbucks.prototype.importPrivateKey = function(key, label) {
     throw new Error('invalid private key')
   }
 
-  if(this.testnet && address.version != bitcoin.Address.address_types.testnet)
+  if(this.testnet && address.version != bitcoin.network.testnet.addressVersion)
     throw new Error('not a valid testnet key')
     
-  if(!this.testnet && address.version != bitcoin.Address.address_types.prod)
+  if(!this.testnet && address.version != bitcoin.network.mainnet.addressVersion)
     throw new Error('not a valid production key')
   
   this.keys.push({
