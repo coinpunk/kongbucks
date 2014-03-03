@@ -33,5 +33,5 @@
     ],
     "harness": "mocha-bdd",
     "files": "test/*.js"
-  },
+  }
 }

@@ -1,6 +1,6 @@
-var bitcoin   = require('bitcoinjs-lib')
-var mnemonic  = require('mnemonic')
-var crypto    = require('crypto')
+var bitcoin    = require('bitcoinjs-lib')
+var mnemonic   = require('mnemonic')
+var crypto     = require('crypto')
 
 var Kongbucks = function(mnemonicSeed, args) {
   var buf
@@ -69,6 +69,10 @@ Kongbucks.prototype.toJson = function() {
     mnemonicSeed: this.mnemonicSeed,
     keys: keysJson
   }
+}
+
+Kongbucks.prototype.setSource = function(obj) {
+  this.source = obj
 }
 
 module.exports = Kongbucks

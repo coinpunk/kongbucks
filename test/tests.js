@@ -38,9 +38,9 @@ describe('Kongbucks', function() {
         wallet.importPrivateKey('derp')
       }, function(err) {
         if((err instanceof Error) && /Error: invalid private key/.test(err)) {
-          return true;
+          return true
         }
-      });
+      })
     })
     
     it('imports valid key', function() {
@@ -57,9 +57,9 @@ describe('Kongbucks', function() {
         wallet.importPrivateKey('932YAbn1t6Y4dYYB1j95Tn7o6gyaGMyK1w1GPMFYBGCYYv9RnXF')
       }, function(err) {
         if((err instanceof Error) && /Error: not a valid production key/.test(err)) {
-          return true;
+          return true
         }
-      });
+      })
     })
     
     it('rejects production key for testnet', function() {
@@ -69,9 +69,9 @@ describe('Kongbucks', function() {
         wallet.importPrivateKey(privateKey)
       }, function(err) {
         if((err instanceof Error) && /Error: not a valid testnet key/.test(err)) {
-          return true;
+          return true
         }
-      });
+      })
     })
     
     it('imports testnet key', function() {
